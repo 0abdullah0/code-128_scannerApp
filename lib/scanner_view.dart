@@ -39,7 +39,9 @@ class _ScannerViewState extends State<ScannerView> {
                   child: ReaderWidget(
                     cropPercent: 1,
                     codeFormat: Format.any,
+                    isMultiScan: true,
                     onScan: (result) async {
+                      print(result);
                       buildFormattedScannedOutput(result.text!);
                       playSound();
                       if (await Vibration.hasVibrator()) {
